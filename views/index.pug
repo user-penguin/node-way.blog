@@ -1,5 +1,635 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+  title WebMag HTML Template
+  // Google font
+  link(href='https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600' rel='stylesheet')
+  // Bootstrap
+  link(type='text/css' rel='stylesheet' href='/stylesheets/bootstrap.min.css')
+  // Font Awesome Icon
+  link(rel='stylesheet' href='/stylesheets/font-awesome.min.css')
+  // Custom stlylesheet
+  link(type='text/css' rel='stylesheet' href='/stylesheets/style.css')
+  // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+  // WARNING: Respond.js doesn't work if you view the page via file://
+  //if lt IE 9
+    script(src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')
+    script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+// Header
+header#header
+  // Nav
+  #nav
+    // Main Nav
+    #nav-fixed
+      .container
+        // logo
+        .nav-logo
+          a.logo(href='index.html')
+            img(src='/images/logo.png' alt='')
+        // /logo
+        // nav
+        ul.nav-menu.nav.navbar-nav
+          li
+            a(href='category.html') News
+          li
+            a(href='category.html') Popular
+          li.cat-1
+            a(href='category.html') Web Design
+          li.cat-2
+            a(href='category.html') JavaScript
+          li.cat-3
+            a(href='category.html') Css
+          li.cat-4
+            a(href='category.html') Jquery
+        // /nav
+        // search & aside toggle
+        .nav-btns
+          button.aside-btn
+            i.fa.fa-bars
+          button.search-btn
+            i.fa.fa-search
+          .search-form
+            input.search-input(type='text' name='search' placeholder='Enter Your Search ...')
+            button.search-close
+              i.fa.fa-times
+        // /search & aside toggle
+    // /Main Nav
+    // Aside Nav
+    #nav-aside
+      // nav
+      .section-row
+        ul.nav-aside-menu
+          li
+            a(href='index.html') Home
+          li
+            a(href='about.html') About Us
+          li
+            a(href='#') Join Us
+          li
+            a(href='#') Advertisement
+          li
+            a(href='contact.html') Contacts
+      // /nav
+      // widget posts
+      .section-row
+        h3 Recent Posts
+        .post.post-widget
+          a.post-img(href='blog-post.html')
+            img(src='/images/widget-2.jpg' alt='')
+          .post-body
+            h3.post-title
+              a(href='blog-post.html') Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically
+        .post.post-widget
+          a.post-img(href='blog-post.html')
+            img(src='/images/widget-3.jpg' alt='')
+          .post-body
+            h3.post-title
+              a(href='blog-post.html') Why Node.js Is The Coolest Kid On The Backend Development Block!
+        .post.post-widget
+          a.post-img(href='blog-post.html')
+            img(src='/images/widget-4.jpg' alt='')
+          .post-body
+            h3.post-title
+              a(href='blog-post.html') Tell-A-Tool: Guide To Web Design And Development Tools
+      // /widget posts
+      // social links
+      .section-row
+        h3 Follow us
+        ul.nav-aside-social
+          li
+            a(href='#')
+              i.fa.fa-facebook
+          li
+            a(href='#')
+              i.fa.fa-twitter
+          li
+            a(href='#')
+              i.fa.fa-google-plus
+          li
+            a(href='#')
+              i.fa.fa-pinterest
+      // /social links
+      // aside nav close
+      button.nav-aside-close
+        i.fa.fa-times
+      // /aside nav close
+    // Aside Nav
+  // /Nav
+// /Header
+// section
+.section
+  // container
+  .container
+    // row
+    .row
+      // post
+      .col-md-6
+        .post.post-thumb
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-1.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-2(href='category.html') JavaScript
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks
+      // /post
+      // post
+      .col-md-6
+        .post.post-thumb
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-2.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-3(href='category.html') Jquery
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Ask HN: Does Anybody Still Use JQuery?
+      // /post
+    // /row
+    // row
+    .row
+      .col-md-12
+        .section-title
+          h2 Recent Posts
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-3.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-1(href='category.html') Web Design
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically
+      // /post
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-4.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-2(href='category.html') JavaScript
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks
+      // /post
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-5.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-3(href='category.html') Jquery
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Ask HN: Does Anybody Still Use JQuery?
+      // /post
+      .clearfix.visible-md.visible-lg
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-6.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-2(href='category.html') JavaScript
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Why Node.js Is The Coolest Kid On The Backend Development Block!
+      // /post
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-1.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-4(href='category.html') Css
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') CSS Float: A Tutorial
+      // /post
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-2.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-1(href='category.html') Web Design
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Tell-A-Tool: Guide To Web Design And Development Tools
+      // /post
+    // /row
+    // row
+    .row
+      .col-md-8
+        .row
+          // post
+          .col-md-12
+            .post.post-thumb
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-2.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-3(href='category.html') Jquery
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Ask HN: Does Anybody Still Use JQuery?
+          // /post
+          // post
+          .col-md-6
+            .post
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-1.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-4(href='category.html') Css
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') CSS Float: A Tutorial
+          // /post
+          // post
+          .col-md-6
+            .post
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-2.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-1(href='category.html') Web Design
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Tell-A-Tool: Guide To Web Design And Development Tools
+          // /post
+          .clearfix.visible-md.visible-lg
+          // post
+          .col-md-6
+            .post
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-4.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-2(href='category.html') JavaScript
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks
+          // /post
+          // post
+          .col-md-6
+            .post
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-5.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-3(href='category.html') Jquery
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Ask HN: Does Anybody Still Use JQuery?
+          // /post
+          .clearfix.visible-md.visible-lg
+          // post
+          .col-md-6
+            .post
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-3.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-1(href='category.html') Web Design
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically
+          // /post
+          // post
+          .col-md-6
+            .post
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-4.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-2(href='category.html') JavaScript
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks
+          // /post
+      .col-md-4
+        // post widget
+        .aside-widget
+          .section-title
+            h2 Most Read
+          .post.post-widget
+            a.post-img(href='blog-post.html')
+              img(src='/images/widget-1.jpg' alt='')
+            .post-body
+              h3.post-title
+                a(href='blog-post.html') Tell-A-Tool: Guide To Web Design And Development Tools
+          .post.post-widget
+            a.post-img(href='blog-post.html')
+              img(src='/images/widget-2.jpg' alt='')
+            .post-body
+              h3.post-title
+                a(href='blog-post.html') Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically
+          .post.post-widget
+            a.post-img(href='blog-post.html')
+              img(src='/images/widget-3.jpg' alt='')
+            .post-body
+              h3.post-title
+                a(href='blog-post.html') Why Node.js Is The Coolest Kid On The Backend Development Block!
+          .post.post-widget
+            a.post-img(href='blog-post.html')
+              img(src='/images/widget-4.jpg' alt='')
+            .post-body
+              h3.post-title
+                a(href='blog-post.html') Tell-A-Tool: Guide To Web Design And Development Tools
+        // /post widget
+        // post widget
+        .aside-widget
+          .section-title
+            h2 Featured Posts
+          .post.post-thumb
+            a.post-img(href='blog-post.html')
+              img(src='/images/post-2.jpg' alt='')
+            .post-body
+              .post-meta
+                a.post-category.cat-3(href='category.html') Jquery
+                span.post-date March 27, 2018
+              h3.post-title
+                a(href='blog-post.html') Ask HN: Does Anybody Still Use JQuery?
+          .post.post-thumb
+            a.post-img(href='blog-post.html')
+              img(src='/images/post-1.jpg' alt='')
+            .post-body
+              .post-meta
+                a.post-category.cat-2(href='category.html') JavaScript
+                span.post-date March 27, 2018
+              h3.post-title
+                a(href='blog-post.html') Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks
+        // /post widget
+        // ad
+        .aside-widget.text-center
+          a(href='#' style='display: inline-block;margin: auto;')
+            img.img-responsive(src='/images/ad-1.jpg' alt='')
+        // /ad
+    // /row
+  // /container
+// /section
+// section
+.section.section-grey
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        .section-title.text-center
+          h2 Featured Posts
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-4.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-2(href='category.html') JavaScript
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks
+      // /post
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-5.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-3(href='category.html') Jquery
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Ask HN: Does Anybody Still Use JQuery?
+      // /post
+      // post
+      .col-md-4
+        .post
+          a.post-img(href='blog-post.html')
+            img(src='/images/post-3.jpg' alt='')
+          .post-body
+            .post-meta
+              a.post-category.cat-1(href='category.html') Web Design
+              span.post-date March 27, 2018
+            h3.post-title
+              a(href='blog-post.html') Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically
+      // /post
+    // /row
+  // /container
+// /section
+// section
+.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-8
+        .row
+          .col-md-12
+            .section-title
+              h2 Most Read
+          // post
+          .col-md-12
+            .post.post-row
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-4.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-2(href='category.html') JavaScript
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
+          // /post
+          // post
+          .col-md-12
+            .post.post-row
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-6.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-2(href='category.html') JavaScript
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Why Node.js Is The Coolest Kid On The Backend Development Block!
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
+          // /post
+          // post
+          .col-md-12
+            .post.post-row
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-1.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-4(href='category.html') Css
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') CSS Float: A Tutorial
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
+          // /post
+          // post
+          .col-md-12
+            .post.post-row
+              a.post-img(href='blog-post.html')
+                img(src='/images/post-2.jpg' alt='')
+              .post-body
+                .post-meta
+                  a.post-category.cat-3(href='category.html') Jquery
+                  span.post-date March 27, 2018
+                h3.post-title
+                  a(href='blog-post.html') Ask HN: Does Anybody Still Use JQuery?
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
+          // /post
+          .col-md-12
+            .section-row
+              button.primary-button.center-block Load More
+      .col-md-4
+        // ad
+        .aside-widget.text-center
+          a(href='#' style='display: inline-block;margin: auto;')
+            img.img-responsive(src='/images/ad-1.jpg' alt='')
+        // /ad
+        // catagories
+        .aside-widget
+          .section-title
+            h2 Catagories
+          .category-widget
+            ul
+              li
+                a.cat-1(href='#')
+                  | Web Design
+                  span 340
+              li
+                a.cat-2(href='#')
+                  | JavaScript
+                  span 74
+              li
+                a.cat-4(href='#')
+                  | JQuery
+                  span 41
+              li
+                a.cat-3(href='#')
+                  | CSS
+                  span 35
+        // /catagories
+        // tags
+        .aside-widget
+          .tags-widget
+            ul
+              li
+                a(href='#') Chrome
+              li
+                a(href='#') CSS
+              li
+                a(href='#') Tutorial
+              li
+                a(href='#') Backend
+              li
+                a(href='#') JQuery
+              li
+                a(href='#') Design
+              li
+                a(href='#') Development
+              li
+                a(href='#') JavaScript
+              li
+                a(href='#') Website
+        // /tags
+    // /row
+  // /container
+// /section
+// Footer
+footer#footer
+  // container
+  .container
+    // row
+    .row
+      .col-md-5
+        .footer-widget
+          .footer-logo
+            a.logo(href='index.html')
+              img(src='/images/logo.png' alt='')
+          ul.footer-nav
+            li
+              a(href='#') Privacy Policy
+            li
+              a(href='#') Advertisement
+          .footer-copyright
+            span
+              | &copy;
+              // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+              | Copyright &copy;
+              script.
+                document.write(new Date().getFullYear());
+              |  All rights reserved | This template is made with
+              i.fa.fa-heart-o(aria-hidden='true')
+              |  by
+              a(href='https://colorlib.com' target='_blank') Colorlib
+              // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+      .col-md-4
+        .row
+          .col-md-6
+            .footer-widget
+              h3.footer-title About Us
+              ul.footer-links
+                li
+                  a(href='about.html') About Us
+                li
+                  a(href='#') Join Us
+                li
+                  a(href='contact.html') Contacts
+          .col-md-6
+            .footer-widget
+              h3.footer-title Catagories
+              ul.footer-links
+                li
+                  a(href='category.html') Web Design
+                li
+                  a(href='category.html') JavaScript
+                li
+                  a(href='category.html') Css
+                li
+                  a(href='category.html') Jquery
+      .col-md-3
+        .footer-widget
+          h3.footer-title Join our Newsletter
+          .footer-newsletter
+            form
+              input.input(type='email' name='newsletter' placeholder='Enter your email')
+              button.newsletter-btn
+                i.fa.fa-paper-plane
+          ul.footer-social
+            li
+              a(href='#')
+                i.fa.fa-facebook
+            li
+              a(href='#')
+                i.fa.fa-twitter
+            li
+              a(href='#')
+                i.fa.fa-google-plus
+            li
+              a(href='#')
+                i.fa.fa-pinterest
+    // /row
+  // /container
+// /Footer
+// jQuery Plugins
+script(src='/javascripts/jquery.min.js')
+script(src='/javascripts/bootstrap.min.js')
+script(src='/javascripts/main.js')
